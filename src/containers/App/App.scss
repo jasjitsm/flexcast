@@ -1,0 +1,17 @@
+/*---------------------------------------
+  app styles
+---------------------------------------*/
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.app__sidebar-and-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1;
+}

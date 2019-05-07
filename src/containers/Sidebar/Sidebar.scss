@@ -1,0 +1,22 @@
+/*---------------------------------------
+  imports
+---------------------------------------*/
+
+@import 'styles/variables.scss';
+
+/*---------------------------------------
+  sidebar styles
+---------------------------------------*/
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 250px;
+  background: $colorGreyscaleExtraLight;
+  transition: $transitionSpeedMedium;
+}
+
+.sidebar--collapsed {
+  width: 70px;
+}

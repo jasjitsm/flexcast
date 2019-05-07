@@ -1,0 +1,110 @@
+/*---------------------------------------
+  imports
+---------------------------------------*/
+
+@import 'styles/variables.scss';
+
+/*---------------------------------------
+  navbar wrapper styles
+---------------------------------------*/
+
+.navbar {
+  margin-top: 50px;
+}
+
+.navbar__list-wrapper {
+  list-style: none;
+}
+
+.navbar__section-divider {
+  width: 100%;
+  height: 30px;
+}
+
+/*---------------------------------------
+  navbar individual nav item styles
+---------------------------------------*/
+
+.navbar__list-item {
+  transition: $transitionSpeedMedium;
+
+  &+.navbar__list-item {
+    margin-top: 0px;
+  }
+}
+
+.navbar__link {
+  display: flex;
+  align-items: center;
+  border-left: 3px solid transparent;
+  font-size: 0.8em;
+  height: 100%;
+  width: 100%;
+  padding: 7px 20px;
+  color: $colorGreyscaleMedium;
+  transition: $transitionSpeedMedium;
+
+  &:hover {
+    path {
+      fill: $colorPrimary;
+      stroke: $colorPrimary;
+    }
+    .navbar__link-text {
+      color: $colorPrimary;
+    }
+  }
+
+}
+
+.navbar__link-icon {
+  width: 15px;
+  height: 15px;
+  transition: $transitionSpeedMedium;
+
+  path {
+    fill: $colorGreyscaleMedium;
+    stroke: $colorGreyscaleMedium;
+    transition: $transitionSpeedMedium;
+  }
+
+}
+
+.navbar__link-text {
+  margin-left: 10px;
+  overflow: hidden;
+
+  // Styles required to animate text width
+  width: 100%;
+  white-space: nowrap;
+  transition: $transitionSpeedMedium;
+}
+
+.navbar__link--active {
+  border-left: 3px solid $colorPrimary;
+  
+  path {
+    fill: $colorPrimary;
+    stroke: $colorPrimary;
+  }
+
+  .navbar__link-text {
+    color: $colorPrimary;
+  }
+}
+
+/*---------------------------------------
+  collapsed navbar styles
+---------------------------------------*/
+
+.navbar--collapsed {
+
+  .navbar__link-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .navbar__link-text {
+    margin-left: 0;
+    width: 0%;
+  }
+
+}

@@ -1,0 +1,48 @@
+/*---------------------------------------
+  imports
+---------------------------------------*/
+
+@import 'styles/variables.scss';
+
+/*---------------------------------------
+  sidebar toggle styles
+---------------------------------------*/
+
+.sidebar-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid $colorGreyscaleRegular;
+  margin-top: auto;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  align-self: flex-end;
+  cursor: pointer;
+  transition: $transitionSpeedMedium;
+
+  &:hover {
+    border: 1px solid $colorPrimary;
+    path {
+      fill: $colorPrimary;
+    }
+  }
+
+}
+
+.sidebar-toggle__chevron {
+  height: 9px;
+  width: auto;
+
+  path {
+    fill: $colorGreyscaleRegular;
+    transition: $transitionSpeedMedium;
+  }
+  
+}
+
+.sidebar-toggle__chevron--reverse {
+  transform: rotate(180deg);
+}

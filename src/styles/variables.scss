@@ -1,0 +1,39 @@
+/*---------------------------------------
+  Font Variables
+---------------------------------------*/
+
+// Font Family Variables
+
+$fontPrimaryRegular: 'Public Sans Regular', sans-serif;
+$fontPrimaryLight: 'Public Sans Light', sans-serif;
+$fontPrimarySemiBold: 'Public Sans SemiBold', sans-serif;
+$fontPrimaryBold: 'Public Sans Bold', sans-serif;
+
+/*---------------------------------------
+  Color Variables
+---------------------------------------*/
+
+// Greyscale Color Variables
+
+$colorGreyscaleExtraLight: #FAFAF9;
+$colorGreyscaleLight: #E0E0E0;
+$colorGreyscaleRegular: #BDBDBD;
+$colorGreyscaleMedium: #828282;
+$colorGreyscaleDark: #4F4F4F;
+$colorGreyscaleExtraDark: #333333;
+
+// Main Color Variables
+
+$colorPrimary: #FF655D;
+
+// Gradient Variables
+
+$gradientPrimary: linear-gradient(92deg, #FF416C, #FF655D);
+
+/*---------------------------------------
+  Animation Variables
+---------------------------------------*/
+
+// Transition Variables
+
+$transitionSpeedMedium: all 0.5s ease-in-out;
