@@ -1,0 +1,41 @@
+/*---------------------------------------
+  imports
+---------------------------------------*/
+
+@import 'styles/variables.scss';
+
+/*---------------------------------------
+  searchbar styles
+---------------------------------------*/
+
+.searchbar {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $colorGreyscaleLight;
+}
+
+.searchbar__icon {
+  height: 25px;
+  width: 25px;
+
+  path {
+    fill: $colorGreyscaleLight;
+  }
+
+}
+
+.searchbar__input {
+  font-family: $fontPrimarySemiBold;
+  font-size: 20px;
+  color: $colorGreyscaleRegular;
+  border: none;
+  outline: none;
+  margin-left: 15px;
+  flex: 1;
+
+  &::placeholder {
+    color: $colorGreyscaleLight;
+  }
+}
