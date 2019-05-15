@@ -13,10 +13,12 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 250px;
+  min-width: 250px;
   background: $colorGreyscaleExtraLight;
   transition: $transitionSpeedMedium;
 }
 
 .sidebar--collapsed {
   width: 70px;
+  min-width: 70px;
 }
