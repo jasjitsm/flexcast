@@ -1,6 +1,6 @@
 import React from 'react';
 import './Discover.scss';
-import { Searchbar, GallerySlider } from 'components';
+import { Searchbar, ThumbnailSlider } from 'components';
 import { getTopPodcasts } from 'api/itunes';
 import { DISCOVER } from 'constants/app';
 import featuredImage from 'assets/featured-image.jpg';
@@ -37,12 +37,31 @@ class Discover extends React.Component {
     )
   }
 
+  renderPodcastThumbnails = (podcastList, maxElements) => {
+    return (
+      <React.Fragment>
+        {podcastList.data && podcastList.data.map((podcast, index) => (
+          <React.Fragment key={ podcast.id }>
+            {index<maxElements &&
+            <div className="podcast-slider-item">
+              <img className="podcast-slider-image" src={ podcast.thumbnailUrl } alt="Podcast Thumbnail"></img>
+            </div>}
+          </React.Fragment>
+        ))}
+      </React.Fragment>
+    )
+  }
+
   render() {
     return (
       <section className="discover">
         <Searchbar placeholder="Enter search term and press Enter/Return" handleSearch={ this.handleSearch }></Searchbar>
         { this.renderFeaturedPodcast() }
-        <GallerySlider title="Top Podcasts" listData=""></GallerySlider>
+        <div className="discover__slider">
+          <ThumbnailSlider title="TOP PODCASTS">
+            { this.renderPodcastThumbnails(this.state.topPodcastList, 15) }
+          </ThumbnailSlider>
+        </div>
       </section>
     );
   }

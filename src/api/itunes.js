@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { isLocalStorageDataExpired, getDateDaysFromNow } from 'utils/helpers';
+import { isLocalStorageDataExpired, getDateDaysFromNow, parsePodcasts } from 'utils/helpers';
 
 const apiConfig = {
   baseUrl: 'https://itunes.apple.com',
@@ -9,15 +9,15 @@ const apiConfig = {
 };
 
 /**
- * Gets a list of the top podcasts using the iTunes API, saves it to local storage,
- * and then returns it.
+ * Gets a list of the top podcasts from local storage, if available. If not, fetches
+ * the list using the iTunes API, saves it to local storage, and returns it.
  */
 export const getTopPodcasts = async () => {
   if (isLocalStorageDataExpired('topPodcastList') === false) {
     return JSON.parse(localStorage.getItem('topPodcastList'));
   } else {
     const searchResults = await getSearchedPodcasts();
-    const topPodcastList = searchResults.data.results;
+    const topPodcastList = parsePodcasts(searchResults.data.results);
     const expiryDate = getDateDaysFromNow(1);
     const topPodcastCookie = { expires: expiryDate, data: topPodcastList };
     localStorage.setItem('topPodcastList', JSON.stringify(topPodcastCookie));

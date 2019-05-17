@@ -11,3 +11,17 @@ export const getDateDaysFromNow = (days) => {
   expiryDate.setTime(expiryDate.getTime()+(days*24*60*60*1000));
   return expiryDate;
 }
+
+export const parsePodcasts = (apiResults) => {
+  return apiResults.map(podcast => {
+    return {
+      id: podcast.collectionId,
+      name: podcast.collectionName,
+      author: podcast.artistName,
+      thumbnailUrl: podcast.artworkUrl600,
+      genres: podcast.genres,
+      primaryGenre: podcast.primaryGenreName,
+      feedUrl: podcast.feedUrl
+    };
+  });
+}

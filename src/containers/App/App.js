@@ -5,6 +5,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 class App extends React.Component {
 
+  state = {
+    subscriptions: []
+  }
+
   render() {
     return (
       <div className="app">

@@ -1,0 +1,32 @@
+/*---------------------------------------
+  imports
+---------------------------------------*/
+
+@import 'styles/variables.scss';
+
+/*---------------------------------------
+  thumbnail slider styles
+---------------------------------------*/
+
+.thumbnail-slider {
+  align-self: stretch;
+  height: auto;
+  overflow: visible;
+}
+
+.thumbnail-slider__title {
+  color: $colorGreyscaleExtraDark;
+  font-size: 16px;
+  font-family: $fontPrimaryBold;
+}
+
+.thumbnail-slider__box {
+  width: 100%;
+  overflow-x: scroll;
+  margin-top: 10px;
+}
+
+.thumbnail-slider__content {
+  display: flex;
+  width: min-content;
+}
